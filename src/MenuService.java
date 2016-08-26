@@ -159,10 +159,13 @@ public class MenuService {
                     + revisedAnimal.getSpecies() + " "
                     + revisedAnimal.getBreed() + " "
                     + revisedAnimal.getDescription());
+            service.updateAnimal(name, species, breed, description);
+
         } else {
             System.out.println("Wrong answer!!! Try again, please.");
             editAnimal(service);
         }
+
     }
     //Method for deleting an animal with catch to make sure that's the desire.
     public void deleteAnimal(AnimalsService service) {

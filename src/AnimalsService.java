@@ -32,6 +32,13 @@ public class AnimalsService {
             e.printStackTrace();
         }
     }
+    public void updateAnimal(String name, String species, String breed, String description) {
+        try {
+            animalRepository.updateAnimal(name, species, breed, description);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public void deleteAnimal(int index) {
         try {

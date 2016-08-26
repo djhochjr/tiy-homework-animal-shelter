@@ -50,6 +50,14 @@ public class AnimalRepository {
         persist();
 
     }
+    public void updateAnimal
+            (String name, String species, String breed, String description) throws IOException {
+        Animal one = new Animal(name, species, breed, description);
+        //animals.add(one);
+
+        persist();
+
+    }
     //Method for trashing an animal employing persist.
     public void deleteAnimal(int index) throws IOException {
         animals.remove(index);
