@@ -1,39 +1,58 @@
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
+
 /**
- * Created by davehochstrasser on 8/24/16.
+ * Created by davehochstrasser on 8/25/16.
  */
+public class AnimalTest {
 
-//Tests Animal objects
-//public class AnimalTest {
-//
-//
-//    private String name = "";
-//    private String species = "";
-//    private String breed = "";
-//    private String description = "";
-//
-//    public AnimalTest(String name, String species, String breed, String description) {
-//        this.name = name;
-//        this.species = species;
-//        this.breed = breed;
-//        this.description = description;
-//    }
-//
-//
-//
-//
-//    @Test
-//    public void setNameTest(String n) {
-//        name = n;
-//        Animal one = new Animal();
-//        assertThat(one.setName(Animal),is(n));
-//
-//
-//
-//
-//
-//    }
+    private Animal animal;
+
+    @Before
+    public void createAnAnimal() {
+        //arrange
+        animal = new Animal("Fred", "Cat", "", "Cute");
+
+    }
+    @Test
+    public void nameWillSetNameTest() {
+
+        // Act
+        animal.setName("dave");
+
+        //Assert
+        assertTrue(animal.getName()=="dave");
+
+    }
+
+    @Test
+    public void speciesWillSetSpeciesTest() {
+        //Act
+        animal.setSpecies("dog");
+
+        //Assert
+        assertTrue(animal.getSpecies()== "dog");
+    }
 
 
+    @Test
+    public void breedWillSetBreedTest() {
+        //Act
+        animal.setBreed("Black Lab");
+        //Assert
+        assertTrue(animal.getBreed()=="Black Lab");
+    }
+
+    @Test
+    public void setDescription() {
+        //Act
+        animal.setDescription("black and hairy");
+        //Assert
+        assertTrue(animal.getDescription() == "black and hairy");
+    }
+
+}
 
 
-//}

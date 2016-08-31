@@ -144,13 +144,10 @@ public class MenuService {
             name = scanner.nextLine();
             System.out.printf("Species [%s]:\n ", animals.get(option).getSpecies());
             species = scanner.nextLine();
-            //animals.get(option).setSpecies(scanner.nextLine());
             System.out.printf("Breed [%s]:\n ", animals.get(option).getBreed());
             breed = scanner.nextLine();
-            //animals.get(option).setBreed(scanner.nextLine());
             System.out.printf("Description [%s]:\n ", animals.get(option).getDescription());
             description = scanner.nextLine();
-            //animals.get(option).setDescription(scanner.nextLine());
 
             Animal revisedAnimal = noEnter(name, species, breed, description, anAnimal);
 
@@ -159,7 +156,7 @@ public class MenuService {
                     + revisedAnimal.getSpecies() + " "
                     + revisedAnimal.getBreed() + " "
                     + revisedAnimal.getDescription());
-            service.updateAnimal(name, species, breed, description);
+            service.updateAnimal(name, species, breed, description, option);
 
         } else {
             System.out.println("Wrong answer!!! Try again, please.");
@@ -223,22 +220,22 @@ public class MenuService {
         return input;
     }
     //Method employed in editAnimal keeping data from being changed when just 'enter' is stroked.
-    public Animal noEnter(String name, String species, String breed, String description, Animal animals) {
+    public Animal noEnter(String name, String species, String breed, String description, Animal animal) {
 
         if (!name.equals("")) {
-            animals.setName(name);
+            animal.setName(name);
         }
         if (!species.equals("")) {
-            animals.setSpecies(species);
+            animal.setSpecies(species);
         }
         if (!breed.equals("")) {
-            animals.setBreed(breed);
+            animal.setBreed(breed);
         }
         if (!description.equals("")) {
-            animals.setDescription(description);
+            animal.setDescription(description);
         }
 
-        return animals;
+        return animal;
     }
 
 }

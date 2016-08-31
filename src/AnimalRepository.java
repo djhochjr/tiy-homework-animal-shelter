@@ -39,8 +39,10 @@ public class AnimalRepository {
     }
     //Method to find an animal
     public Animal getAnimal(int index) {
+
         return animals.get(index);
     }
+
     //Method for creating a new animal employing persist.
     public void createAnimal
             (String name, String species, String breed, String description) throws IOException {
@@ -48,15 +50,15 @@ public class AnimalRepository {
         animals.add(one);
 
         persist();
-
     }
     public void updateAnimal
-            (String name, String species, String breed, String description) throws IOException {
+            (String name, String species, String breed, String description,int index) throws IOException {
+
         Animal one = new Animal(name, species, breed, description);
-        //animals.add(one);
+        animals.add(index, one);
+
 
         persist();
-
     }
     //Method for trashing an animal employing persist.
     public void deleteAnimal(int index) throws IOException {
@@ -69,6 +71,9 @@ public class AnimalRepository {
         Files.write(filePath, json.getBytes());
     }
 
+    public void clearAnimals() {
+        animals.clear();
+    }
 }
 
 

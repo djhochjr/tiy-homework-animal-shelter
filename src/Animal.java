@@ -7,12 +7,18 @@ public class Animal {
     private String breed = "";
     private String description = "";
 
+
     public Animal(String name, String species, String breed, String description) {
         this.name = name;
         this.species = species;
         this.breed = breed;
         this.description = description;
     }
+
+    //think about putting the update over here along with noEnter
+    //also print functions maybe
+
+
 
     public void setName(String n) {
         name = n;

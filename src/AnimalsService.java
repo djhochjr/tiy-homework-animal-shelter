@@ -12,15 +12,6 @@ public class AnimalsService {
         this.animalRepository = animalRepository;
     }
 
-    public Animal getAnimal(int index) {
-        try {
-            return animalRepository.getAnimal(index);
-        } catch (IndexOutOfBoundsException e) {
-            return null;
-        }
-    }
-
-
     public ArrayList<Animal> listAnimals() {
         return animalRepository.listAnimals();
     }
@@ -32,20 +23,30 @@ public class AnimalsService {
             e.printStackTrace();
         }
     }
-    public void updateAnimal(String name, String species, String breed, String description) {
+
+    public void updateAnimal(String name, String species, String breed, String description, int index) {
         try {
-            animalRepository.updateAnimal(name, species, breed, description);
+            animalRepository.updateAnimal(name, species, breed, description,index);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
-    public void deleteAnimal(int index) {
+    public Animal deleteAnimal(int index) {
         try {
             animalRepository.deleteAnimal(index);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
+    }
+    //both of the following are tested with the scope above in AnimalServiceTest
+    public Animal getAnimal(int index) {
+        return animalRepository.getAnimal(index);
+    }
+    public void clearAnimals() {
+        animalRepository.clearAnimals();
     }
 
 }
