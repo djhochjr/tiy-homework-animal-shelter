@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="org.java-sql-generator:org.java-sql-generator.api:0.3.2" type="repository">
+    <properties maven-id="org.java-sql-generator:org.java-sql-generator.api:0.3.2" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/java-sql-generator/org.java-sql-generator.api/0.3.2/org.java-sql-generator.api-0.3.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/api-typeable-pojos/org.api-typeable-pojos.api/0.7/org.api-typeable-pojos.api-0.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
